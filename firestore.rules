@@ -1,0 +1,14 @@
+rules_version = '2';
+// Só os dois e-mails abaixo leem e gravam os dados do app.
+// E-mails cadastrados em Authentication › Usuários.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function casal() {
+      return request.auth != null
+        && request.auth.token.email in ['gabrielferenzini.engmec@gmail.com', 'analuaborba@gmail.com'];
+    }
+    match /{document=**} {
+      allow read, write: if casal();
+    }
+  }
+}
