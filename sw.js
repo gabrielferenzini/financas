@@ -1,6 +1,6 @@
 // Guarda o app no celular para abrir mesmo sem internet.
 // Ao publicar uma versão nova, aumente o número abaixo.
-const VERSAO = 'financas-v1';
+const VERSAO = 'financas-v2';
 const LOCAIS = ['./', 'index.html', 'firebase-config.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
